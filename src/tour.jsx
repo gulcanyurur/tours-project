@@ -1,6 +1,6 @@
 import React from 'react'
 
-const tour = () => {
+const Tour = () => {
   return (
     <div>
       <h2>Tour</h2>
@@ -8,4 +8,4 @@ const tour = () => {
   )
 }
 
-export default tour
+export default Tour
