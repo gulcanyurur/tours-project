@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
-
+import Tours from "./Tours";
 
 const url = "https://www.course-api.com/react-tours-project";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [tours, setTours] = useState([]);
+
+  // Silme fonksiyonu (Not Interested butonuna basılınca)
+  const removeTour = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
 
   // Turları API'den çekme
   const fetchTours = async () => {
@@ -19,12 +25,6 @@ const App = () => {
       console.log(error);
     }
     setIsLoading(false);
-  };
-
-  // Silme fonksiyonu (Not Interested butonuna basılınca)
-  const removeTour = (id) => {
-    const newTours = tours.filter((tour) => tour.id !== id);
-    setTours(newTours);
   };
 
   // Sayfa ilk yüklendiğinde verileri çek

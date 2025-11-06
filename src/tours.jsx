@@ -19,3 +19,4 @@ const Tours = ({ tours, removeTour }) => {
 
 export default Tours;
 
+
